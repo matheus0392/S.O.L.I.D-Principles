@@ -1,10 +1,10 @@
-package dev.msnascimento.single.service;
+package dev.msnascimento.open.service;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-import dev.msnascimento.single.ValidacaoException;
-import dev.msnascimento.single.model.Funcionario;
+import dev.msnascimento.open.ValidacaoException;
+import dev.msnascimento.open.model.Funcionario;
 
 public class ReajusteService {
 
