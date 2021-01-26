@@ -1,4 +1,4 @@
-package br.com.alura.rh;
+package dev.msnascimento.single;
 
 public class ValidacaoException extends RuntimeException {
 

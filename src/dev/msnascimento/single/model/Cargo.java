@@ -1,4 +1,4 @@
-package br.com.alura.rh.model;
+package dev.msnascimento.single.model;
 
 public enum Cargo {
 
