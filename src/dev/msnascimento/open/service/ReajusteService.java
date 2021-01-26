@@ -1,20 +1,23 @@
 package dev.msnascimento.open.service;
 
 import java.math.BigDecimal;
-import java.math.RoundingMode;
+import java.util.List;
 
-import dev.msnascimento.open.ValidacaoException;
 import dev.msnascimento.open.model.Funcionario;
 
 public class ReajusteService {
 
+	private List<ValidacaoReajuste> validacoes;
+
+	public ReajusteService(List<ValidacaoReajuste> validacoes) {
+		super();
+		this.validacoes = validacoes;
+	}
+
 	public void reajustarSalarioFuncionario(Funcionario funcionario, BigDecimal aumento) {
-		BigDecimal salario = funcionario.getSalario();
-		BigDecimal percentualReajuste = aumento.divide(salario, RoundingMode.HALF_UP);
-		if (percentualReajuste.compareTo(new BigDecimal("0.4")) > 0) {
-			throw new ValidacaoException("Reajuste nao pode ser superior a 40% do salario!");
-		}
-		BigDecimal salarioReajustado = salario.add(aumento);
+		this.validacoes.forEach(v -> v.validar(funcionario, aumento));
+
+		BigDecimal salarioReajustado = funcionario.getSalario().add(aumento);
 		funcionario.atualizarSalario(salarioReajustado);
 	}
 }
