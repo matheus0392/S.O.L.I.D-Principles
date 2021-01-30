@@ -3,10 +3,7 @@ package dev.msnascimento.is.service.taxing;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public interface Reajuste {
+public interface ReajusteTributavel extends Reajuste {
 
-	BigDecimal valor();
-
-	LocalDate data();
-
+	BigDecimal valorImpostoRenda();
 }

@@ -3,7 +3,7 @@ package dev.msnascimento.is.service.taxing;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public class Promocao implements Reajuste {
+public class Promocao implements ReajusteTributavel {
 
 	private BigDecimal valor;
 	private LocalDate data;
